@@ -9,7 +9,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="container mx-auto">
         MAIN Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe harum nam architecto numquam quis dolorum necessitatibus hic dignissimos molestiae dicta doloremque odio sequi adipisci, minus officia aspernatur perspiciatis corrupti recusandae?
       </main>
     </div>

@@ -17,9 +17,9 @@ const Header = () => {
     <div className="bg-blue-600 p-4 text-white">
       <nav className="container flex flex-wrap justify-between items-center mx-auto">
         <Link href="/">
-          <div className="flex items-center cursor-pointer hover:text-blue-100">
+          <div className="flex text-gray-200 items-center cursor-pointer hover:text-blue-50">
             <Logo />
-            <h2 className="mx-5 font-bold text-xl">B-LogR</h2>
+            <h2 className="mx-4 font-bold text-xl">B-LogR</h2>
           </div>
         </Link>
         <div className="flex md:order-2">
@@ -67,7 +67,7 @@ const Header = () => {
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             {categories.map((category) => (
               <Link key={category.slug} href={`/${category.slug}`}>
-                <li className="block py-2 pr-4 pl-3 text-gray-200 font-semibold border-b border-gray-100 hover:text-white md:border-0 md:p-0">
+                <li className="block border-transparent hover:border-solid border border-b-white hover:rounded-lg hover:bg-blue-500 md:hover:bg-transparent py-2 pr-4 pl-3 text-gray-200 font-semibold hover:border-blue-50 cursor-pointer hover:text-white md:border-0 md:p-0">
                   {category.name}
                 </li>
               </Link>
