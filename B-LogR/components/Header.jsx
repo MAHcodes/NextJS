@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <div className="bg-blue-600 p-4 text-white">
-      <nav className="container flex flex-wrap justify-between items-center mx-auto">
+      <nav className="container px-4 flex flex-wrap justify-between items-center mx-auto">
         <Link href="/">
           <div className="flex text-gray-200 items-center cursor-pointer hover:text-blue-50">
             <Logo />

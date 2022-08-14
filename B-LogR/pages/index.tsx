@@ -1,19 +1,29 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import Head from "next/head";
+import { Aside } from "../components/Aside";
+import { Posts } from "../components/Posts";
+import { InferGetStaticPropsType } from "next";
+import { getCategories } from "../services/gql";
 
-const Home: NextPage = () => {
+const Home = ({ categories }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <div>
+    <div className="container mx-auto px-4 flex gap-4 mt-6 flex-col lg:flex-row">
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>B-LogR</title>
       </Head>
 
-      <main className="container mx-auto">
-        MAIN Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe harum nam architecto numquam quis dolorum necessitatibus hic dignissimos molestiae dicta doloremque odio sequi adipisci, minus officia aspernatur perspiciatis corrupti recusandae?
-      </main>
+      <Posts />
+      <Aside categories={categories} />
     </div>
-  )
+  );
+};
+
+export async function getStaticProps() {
+  const categories = await getCategories();
+  return {
+    props: {
+      categories,
+    },
+  };
 }
 
-export default Home
+export default Home;
