@@ -15,3 +15,32 @@ export const getCategories = async () => {
   const result = await request(graphqlAPI, query);
   return result.categories;
 };
+
+export const getPosts = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection {
+        edges {
+          node {
+            title
+            slug
+            excerpt
+            athuror {
+              name
+              slug
+              profile {
+                url
+              }
+            }
+            image {
+              url
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};
