@@ -1,12 +1,11 @@
 import Head from "next/head";
 import { Aside } from "../components/Aside";
 import { Posts } from "../components/Posts";
-import { InferGetStaticPropsType } from "next";
 import { getCategories, getPosts } from "../services/gql";
 
-const Home = ({ categories, posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Home = ({categories, posts}: any) => {
   return (
-    <div className="container mx-auto px-4 flex gap-4 mt-6 flex-col-reverse lg:flex-row">
+    <div className="container mx-auto px-4 flex gap-6 mt-6 flex-col-reverse lg:flex-row">
       <Head>
         <title>B-LogR</title>
       </Head>

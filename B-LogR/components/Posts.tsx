@@ -1,14 +1,19 @@
 import Link from "next/link";
-import React from "react";
+import React, { FC } from "react";
+import { Post } from "../utils/types"
 
-export const Posts = ({ posts }: { posts: [] }) => {
+interface Props {
+  posts: Post[];
+}
+
+export const Posts: FC<Props> = ({ posts }) => {
   return (
     <main className="basis-3/4">
       <>
-        {posts.map(({ node: post }: any) => {
+        {posts.map(({ node: post }: Post) => {
           return (
             <div key={post.slug}>
-              <Link href={post.slug}>
+              <Link href={`/post/${post.slug}`}>
                 <div className="flex flex-col md:flex-row gap-4 bg-white rounded-lg cursor-pointer hover:shadow-md transition-shadow duration-300 p-5">
                   <div className="basis-1/4 overflow-hidden">
                     <img

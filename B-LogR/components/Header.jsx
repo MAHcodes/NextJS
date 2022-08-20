@@ -36,7 +36,9 @@ const Header = () => {
             className="inline-flex items-center p-2 text-sm text-gray-100 hover:text-blue-600 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             aria-controls="mobile-menu-4"
             aria-expanded="false"
-            onClick={() => {setNav(!nav)}}
+            onClick={() => {
+              setNav(!nav);
+            }}
           >
             <span className="sr-only">Open main menu</span>
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -61,7 +63,9 @@ const Header = () => {
           </button>
         </div>
         <div
-          className={`${!nav && "hidden"} justify-between items-center w-full md:flex md:w-auto md:order-1`}
+          className={`${
+            !nav && "hidden"
+          } justify-between items-center w-full md:flex md:w-auto md:order-1`}
           id="mobile-menu-4"
         >
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
