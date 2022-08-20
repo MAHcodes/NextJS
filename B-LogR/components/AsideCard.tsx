@@ -19,7 +19,7 @@ export const AsideCard:FC<Props> = ({list, title}) => {
       </h2>
       {list.map(({ slug, name }) => (
         <p className="hover:underline" key={slug}>
-          <Link href={slug}>{name}</Link>
+          <Link href={`/cat/${slug}`}>{name}</Link>
         </p>
       ))}
     </div>

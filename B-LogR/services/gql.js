@@ -44,3 +44,21 @@ export const getPosts = async () => {
   const result = await request(graphqlAPI, query);
   return result.postsConnection.edges;
 };
+
+export const getPostsSlug = async () => {
+  const query = gql`
+    query MyQuery {
+      postsConnection {
+        edges {
+          node {
+            slug
+            title
+          }
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+  return result.postsConnection.edges;
+};

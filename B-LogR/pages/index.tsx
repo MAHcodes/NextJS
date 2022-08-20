@@ -12,7 +12,7 @@ const Home = ({categories, posts}: any) => {
 
       <Posts posts={posts} />
 
-      <Aside categories={categories} />
+      <Aside list={categories} title="Categories"  />
     </div>
   );
 };
