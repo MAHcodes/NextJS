@@ -1,32 +1,39 @@
 import { Aside } from "../../components/Aside";
-import { getPostsSlug } from "../../services/gql";
+import { getPost, getPostsSlug } from "../../services/gql";
+import { IPost } from "../../utils/types"; 
 
-const Post = ({ slug }) => {
+const Post = ({post} : {post: IPost}) => {
   return (
     <div className="container mx-auto px-4">
       <div className=""></div>
       {/* <Aside /> */}
-      <h1>{slug}</h1>
+      <h1>{post.title}</h1>
     </div>
   );
 };
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({
+  params,
+}: {
+  params: { slug: string };
+}) => {
+
+  const post = await getPost(params.slug);
+
+  console.log({post})
   return {
     props: {
-      slug: params.slug
+      post,
     },
   };
 };
 
-
-
 export const getStaticPaths = async () => {
-  const posts = await getPostsSlug();
-
-  const paths = posts.map((post) => ({
+  const postsSlugs = await getPostsSlug();
+  
+  const paths = postsSlugs.map((slug: { node: { slug: string } }) => ({
     params: {
-      slug: post.node.slug,
+      slug: slug.node.slug,
     },
   }));
 

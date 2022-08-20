@@ -1,16 +1,16 @@
 import Link from "next/link";
 import React, { FC } from "react";
-import { Post } from "../utils/types"
+import { IPost } from "../utils/types";
 
 interface Props {
-  posts: Post[];
+  posts: { node: IPost }[];
 }
 
 export const Posts: FC<Props> = ({ posts }) => {
   return (
     <main className="basis-3/4">
       <>
-        {posts.map(({ node: post }: Post) => {
+        {posts.map(({ node: post }) => {
           return (
             <div key={post.slug}>
               <Link href={`/post/${post.slug}`}>
