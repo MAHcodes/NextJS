@@ -1,4 +1,4 @@
-import { Aside } from "../../components/Aside";
+/* import { Aside } from "../../components/Aside"; */
 import { getPost, getPostsSlug } from "../../services/gql";
 import { IPost } from "../../utils/types"; 
 
@@ -20,7 +20,6 @@ export const getStaticProps = async ({
 
   const post = await getPost(params.slug);
 
-  console.log({post})
   return {
     props: {
       post,
