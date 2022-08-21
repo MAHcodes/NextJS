@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { FC } from "react";
 import { IPost } from "../utils/types";
+import { Author } from "./Author";
 
 interface Props {
   posts: { node: IPost }[];
@@ -25,21 +26,7 @@ export const Posts: FC<Props> = ({ posts }) => {
                   <div className="basis-3/4">
                     <h1 className="font-bold text-xl">{post.title}</h1>
                     <p className="my-2">{post.excerpt}</p>
-                    <Link href={`/author/${post.athuror.slug}`}>
-                      <div className="group transition duration-300 hover:shadow-md shadow-blue-100 items-center gap-2 p-1 pr-3 cursor-pointer inline-flex bg-gray-100 hover:bg-blue-50 rounded-full">
-                        <img
-                          className="w-8 h-8 object-cover rounded-full"
-                          src={post.athuror.profile.url}
-                          alt={post.athuror.name}
-                        />
-                        <div>
-                          <p className="text-xs text-blue-500">Author: </p>
-                          <h1 className="text-sm text-blue-800 group-hover:underline">
-                            {post.athuror.name}
-                          </h1>
-                        </div>
-                      </div>
-                    </Link>
+                    <Author athuror={post.athuror} />
                   </div>
                 </div>
               </Link>

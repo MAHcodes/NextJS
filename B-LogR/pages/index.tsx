@@ -5,7 +5,7 @@ import { getCategories, getPosts } from "../services/gql";
 
 const Home = ({categories, posts}: any) => {
   return (
-    <div className="container mx-auto px-4 flex gap-6 mt-6 flex-col-reverse lg:flex-row">
+    <div className="container mx-auto px-4 flex gap-6 mt-6 flex-col-reverse lg:flex-row bg-white">
       <Head>
         <title>B-LogR</title>
       </Head>

@@ -103,6 +103,9 @@ export const getPost = async (slug) => {
         title
         slug
         excerpt
+        description {
+          html
+        }
         athuror {
           name
           slug

@@ -1,3 +1,11 @@
+export interface IAuthor {
+    slug: string;
+    name: string;
+    profile: {
+      url: string;
+    };
+}
+
 export interface IPost {
   slug: string;
   image: {
@@ -5,12 +13,9 @@ export interface IPost {
   };
   title: string;
   excerpt: string;
-  athuror: {
-    slug: string;
-    name: string;
-    profile: {
-      url: string;
-    };
+  athuror: IAuthor;
+  description: {
+    html: string
   };
 }
 
