@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { List } from "../utils/types";
+import { IList } from "../utils/types";
 import { AsideCard } from "./AsideCard";
 
 interface Props {
-  list: List[];
+  list: IList[];
   title: string;
 }
 

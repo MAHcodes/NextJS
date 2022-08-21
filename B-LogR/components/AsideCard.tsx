@@ -1,13 +1,9 @@
 import Link from "next/link";
 import { FC } from "react";
-
-interface List {
-  slug: string
-  name: string
-}
+import { IList } from "../utils/types";
 
 interface Props {
-  list: List[]
+  list: IList[]
   title: string;
 }
 

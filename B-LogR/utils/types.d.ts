@@ -14,8 +14,31 @@ export interface IPost {
   };
 }
 
-export interface List {
+export interface IList {
   slug: string;
   name: string;
 }
 
+export interface IAuthor {
+  name: string;
+  slug: string;
+  bio: string;
+  profile: {
+    url: string;
+  };
+  posts: {
+    slug: string;
+    title: string;
+    image: {
+      url: string;
+    };
+    excerpt: string;
+    athuror: {
+      name: string;
+      slug: string;
+      profile: {
+        url: string;
+      };
+    };
+  };
+}
