@@ -1,9 +1,19 @@
+import Head from "next/head";
+import { Aside } from "../../components/Aside";
+import { Posts } from "../../components/Posts";
 import { getCategories, getPostsByCat } from "../../services/gql";
-import { IPost } from "../../utils/types";
+import { IPost, List } from "../../utils/types";
 
-const Category = ({ posts }: { posts: IPost[] }) => {
-  console.log(posts);
-  return <div>{posts[0].title}</div>;
+const Category = ({ posts, categories }: { posts: { node: IPost}[], categories: List[] } ) => {
+  return <div className="container mx-auto px-4 flex gap-6 mt-6 flex-col-reverse lg:flex-row">
+      <Head>
+        <title>B-LogR</title>
+      </Head>
+
+      <Posts posts={posts} />
+
+      <Aside list={categories} title="Categories"  />
+    </div>
 };
 
 export const getStaticProps = async ({
@@ -12,10 +22,12 @@ export const getStaticProps = async ({
   params: { slug: string };
 }) => {
   const posts = await getPostsByCat(params.slug);
+  const categories = await getCategories();
 
   return {
     props: {
-      posts: posts.map(({node}: {node: IPost}) => node),
+      posts,
+      categories,
     },
   };
 };

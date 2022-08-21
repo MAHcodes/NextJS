@@ -13,3 +13,9 @@ export interface IPost {
     };
   };
 }
+
+export interface List {
+  slug: string;
+  name: string;
+}
+

@@ -69,7 +69,7 @@ const Header = () => {
         >
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             {categories.map((category) => (
-              <Link key={category.slug} href={`/${category.slug}`}>
+              <Link key={category.slug} href={`/cat/${category.slug}`}>
                 <li className="block border-transparent hover:border-solid border border-b-white hover:rounded-lg hover:bg-blue-500 md:hover:bg-transparent py-2 pr-4 pl-3 text-gray-200 font-semibold hover:border-blue-50 cursor-pointer hover:text-white md:border-0 md:p-0">
                   {category.name}
                 </li>

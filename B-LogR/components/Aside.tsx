@@ -1,10 +1,6 @@
 import { FC } from "react";
+import { List } from "../utils/types";
 import { AsideCard } from "./AsideCard";
-
-interface List {
-  slug: string;
-  name: string;
-}
 
 interface Props {
   list: List[];
