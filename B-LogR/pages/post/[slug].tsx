@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Author } from "../../components/Author";
 import { getPost, getPostsSlug } from "../../services/gql";
 import { IPost } from "../../utils/types"; 
@@ -8,7 +7,7 @@ const Post = ({post} : {post: IPost}) => {
     <div className="container mx-auto px-4 mt-6">
       <div className="relative">
         <img className="w-full object-contain rounded-md" src={post.image.url} alt={post.title} />
-        <div className="from-transparent to-white bg-gradient-to-b absolute inset-0 top-1/2" />
+        <div className="from-transparent to-custom-gray bg-gradient-to-b absolute inset-0 top-1/2" />
       </div>
       <h1 className="font-bold mt-[-3rem] mb-2 relative text-[2.5rem] text-black">{post.title}</h1>
       <Author athuror={post.athuror} />

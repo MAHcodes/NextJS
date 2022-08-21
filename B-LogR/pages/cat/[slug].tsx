@@ -2,9 +2,9 @@ import Head from "next/head";
 import { Aside } from "../../components/Aside";
 import { Posts } from "../../components/Posts";
 import { getCategories, getPostsByCat } from "../../services/gql";
-import { IPost, List } from "../../utils/types";
+import { IPost, IList } from "../../utils/types";
 
-const Category = ({ posts, categories }: { posts: { node: IPost}[], categories: List[] } ) => {
+const Category = ({ posts, categories }: { posts: { node: IPost}[], categories: IList[] } ) => {
   return <div className="container mx-auto px-4 flex gap-6 mt-6 flex-col-reverse lg:flex-row">
       <Head>
         <title>B-LogR</title>
