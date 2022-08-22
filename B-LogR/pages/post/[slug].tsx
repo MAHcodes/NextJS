@@ -9,7 +9,7 @@ const Post = ({post} : {post: IPost}) => {
         <img className="w-full object-contain rounded-md" src={post.image.url} alt={post.title} />
         <div className="from-transparent to-custom-gray bg-gradient-to-b absolute inset-0 top-1/2" />
       </div>
-      <h1 className="font-bold mt-[-3rem] mb-2 relative text-[2.5rem] text-black">{post.title}</h1>
+      <h1 className="font-bold mt-[-3rem] mb-2 relative text-4xl text-black">{post.title}</h1>
       <Author athuror={post.athuror} />
       <p dangerouslySetInnerHTML={{__html: post.description.html}} className="mt-4" />
     </div>
