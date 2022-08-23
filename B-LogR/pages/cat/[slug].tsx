@@ -10,7 +10,7 @@ const Category = ({ posts, categories }: { posts: { node: IPost}[], categories: 
         <title>B-LogR</title>
       </Head>
 
-      <Posts posts={posts} />
+      <Posts posts={posts.map( post => post.node)} />
 
       <Aside list={categories} title="Categories"  />
     </div>

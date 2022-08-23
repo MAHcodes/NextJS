@@ -31,19 +31,5 @@ export interface IAuthor {
   profile: {
     url: string;
   };
-  posts: {
-    slug: string;
-    title: string;
-    image: {
-      url: string;
-    };
-    excerpt: string;
-    athuror: {
-      name: string;
-      slug: string;
-      profile: {
-        url: string;
-      };
-    };
-  };
+  posts: IPost[];
 }

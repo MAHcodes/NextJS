@@ -4,14 +4,14 @@ import { IPost } from "../utils/types";
 import { Author } from "./Author";
 
 interface Props {
-  posts: { node: IPost }[];
+  posts: IPost[];
 }
 
 export const Posts: FC<Props> = ({ posts }) => {
   return (
     <main className="basis-3/4">
       <>
-        {posts.map(({ node: post }) => {
+        {posts.map((post) => {
           return (
             <div key={post.slug}>
               <Link href={`/post/${post.slug}`}>
