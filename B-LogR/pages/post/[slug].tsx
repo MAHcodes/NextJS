@@ -16,10 +16,7 @@ const Post = ({post} : {post: IPost}) => {
   );
 };
 
-export const getStaticProps = async ({
-  params,
-}: {
-  params: { slug: string };
+export const getStaticProps = async ({params}: { params: { slug: string };
 }) => {
 
   const post = await getPost(params.slug);

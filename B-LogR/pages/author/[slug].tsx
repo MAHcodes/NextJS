@@ -3,7 +3,6 @@ import { getAuthor, getAuthors } from "../../services/gql";
 import { IAuthor } from "../../utils/types";
 
 const Author = ({ author }: { author: IAuthor }) => {
-  console.log(author);
   return (
     <div className="container mt-6 mx-auto px-4">
       <div className="flex gap-4 flex-col">
